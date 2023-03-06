@@ -360,6 +360,11 @@ console.log("JS 系统方法");
 //     console.log("定时器执行");
 // }, 3000);//6秒
 
+// setTimeout的第三个参数，是setTimeout的第一个参数，传入的函数的参数。
+// self.timer = setTimeout(function(aaa) {
+//     console.log("定时器执行 " + aaa);
+// }, 3000, "第三个参数");
+
 // clearTimeout 停止 没有执行的延迟调用
 // clearTimeout(self.timer);
 
