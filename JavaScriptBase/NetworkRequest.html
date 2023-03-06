@@ -15,6 +15,13 @@
             var img = document.createElement('img');
             img.width = 800 * 0.2;
             img.height = 500 * 0.2;
+            // img.callback = function () {
+            //     console.log("callback");
+            // };//自己给img添加的属性
+            // img.aa = "KKK";//自己给img添加的属性
+            // console.log(img);
+            // console.log(img.aa);
+            // img.callback();
 
             // onload 请求完毕的回调
             img.onload = function () {
@@ -36,10 +43,81 @@
             img.src = src;
 
         }
+
+        function ajaxRequestGet() {
+            console.log("Ajax Get");
+            var xhr = null;
+            if (window.XMLHttpRequest) {
+                console.log("XMLHttpRequest");
+                xhr = new XMLHttpRequest();
+            } else {
+                console.log("!XMLHttpRequest");
+                xhr = new ActiveXObject('Microsoft.XMLHTTP');
+            }
+            var serverUrl = "https://receiver-ta-demo.thinkingdata.cn/config?appid=af6861d085e14b5c948662e1fcdce6ef";
+            // var serverUrl = "https://receiver-ta-demo.thinkingdata.cn/check_appid?appid=af6861d085e14b5c948662e1fcdce6ef";//这地址不是application使用
+            xhr.open('get',serverUrl, true);
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status >= 200 && xhr.status < 300 || xhr.status === 304) { 
+                        var response = JSON.parse(xhr.response);
+                        console.log(response);
+                    }
+                }
+            }
+            xhr.send();
+        }
+
+        function ajaxRequestPost() {
+            console.log("Ajax Post");
+            // 进过数数SDK处理过的 Test_JS_765 事件
+            var data = "&data=eyJkYXRhIjpbeyIjdHlwZSI6InRyYWNrIiwiI3RpbWUiOiIyMDIzLTAzLTA2IDE0OjQ3OjUxLjE5MiIsIiNkaXN0aW5jdF9pZCI6IjE4NjkxZTcwOTgyODUxLTBlMGNjY2I2NWVlZTBlLTU0Mzc5NzEtMjUwMTI1LTE4NjkxZTcwOTgzNzkzIiwiI2FjY291bnRfaWQiOiJkZW5neWF6aG91XzEyMzUiLCIjZXZlbnRfbmFtZSI6IlRlc3RfSlNfNzY1IiwicHJvcGVydGllcyI6eyIjZGV2aWNlX2lkIjoiMTg2OTFlNzA5ODI4NTEtMGUwY2NjYjY1ZWVlMGUtNTQzNzk3MS0yNTAxMjUtMTg2OTFlNzA5ODM3OTMiLCIjem9uZV9vZmZzZXQiOjgsIiNvcyI6ImlPUyIsIiNsaWJfdmVyc2lvbiI6IjEuNi4xIiwiI2xpYiI6ImpzIiwiI3NjcmVlbl9oZWlnaHQiOjY2NywiI3NjcmVlbl93aWR0aCI6Mzc1LCIjYnJvd3NlciI6InNhZmFyaSIsIiNicm93c2VyX3ZlcnNpb24iOiIxMy4wLjMiLCIjc3lzdGVtX2xhbmd1YWdlIjoiemgiLCIjdWEiOiJtb3ppbGxhLzUuMCAoaXBob25lOyBjcHUgaXBob25lIG9zIDEzXzJfMyBsaWtlIG1hYyBvcyB4KSBhcHBsZXdlYmtpdC82MDUuMS4xNSAoa2h0bWwsIGxpa2UgZ2Vja28pIHZlcnNpb24vMTMuMC4zIG1vYmlsZS8xNWUxNDggc2FmYXJpLzYwNC4xIiwiI3V0bSI6Int9IiwiI3RpbWVfY2FsaWJyYXRpb24iOjN9fV0sIiNhcHBfaWQiOiJhZjY4NjFkMDg1ZTE0YjVjOTQ4NjYyZTFmY2RjZTZlZiIsIiNmbHVzaF90aW1lIjoxNjc4MDg1MjcxMTkzfQ%3D%3D&ext=crc%3D881773029&version=1.6.1";
+            var xhr = null;
+            if (window.XMLHttpRequest) {
+                console.log("XMLHttpRequest");
+                xhr = new XMLHttpRequest();
+            } else {
+                console.log("!XMLHttpRequest");
+                xhr = new ActiveXObject('Microsoft.XMLHTTP');
+            }
+            var serverUrl = "https://receiver-ta-demo.thinkingdata.cn/sync_js";
+            xhr.open('post',serverUrl, true);
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status >= 200 && xhr.status < 300 || xhr.status === 304) { 
+                        var response = JSON.parse(xhr.response);
+                        console.log(response);
+                    }
+                }
+            }
+            xhr.send(data);
+        }
+
+        function navigatorRequest() {
+            console.log("navigator");
+            if (navigator.sendBeacon) {
+                console.log("===>>> sendBeacon");
+                // 进过数数SDK处理过的 Test_JS_884 事件
+                // var data = "eyJkYXRhIjpbeyIjdHlwZSI6InRyYWNrIiwiI3RpbWUiOiIyMDIzLTAzLTA2IDE1OjI2OjI0LjY2NiIsIiNkaXN0aW5jdF9pZCI6IjE4NjkxZTcwOTgyODUxLTBlMGNjY2I2NWVlZTBlLTU0Mzc5NzEtMjUwMTI1LTE4NjkxZTcwOTgzNzkzIiwiI2FjY291bnRfaWQiOiJkZW5neWF6aG91XzEyMzUiLCIjZXZlbnRfbmFtZSI6IlRlc3RfSlNfODg0IiwicHJvcGVydGllcyI6eyIjZGV2aWNlX2lkIjoiMTg2OTFlNzA5ODI4NTEtMGUwY2NjYjY1ZWVlMGUtNTQzNzk3MS0yNTAxMjUtMTg2OTFlNzA5ODM3OTMiLCIjem9uZV9vZmZzZXQiOjgsIiNvcyI6ImlPUyIsIiNsaWJfdmVyc2lvbiI6IjEuNi4xIiwiI2xpYiI6ImpzIiwiI3NjcmVlbl9oZWlnaHQiOjY2NywiI3NjcmVlbl93aWR0aCI6Mzc1LCIjYnJvd3NlciI6InNhZmFyaSIsIiNicm93c2VyX3ZlcnNpb24iOiIxMy4wLjMiLCIjc3lzdGVtX2xhbmd1YWdlIjoiemgiLCIjdWEiOiJtb3ppbGxhLzUuMCAoaXBob25lOyBjcHUgaXBob25lIG9zIDEzXzJfMyBsaWtlIG1hYyBvcyB4KSBhcHBsZXdlYmtpdC82MDUuMS4xNSAoa2h0bWwsIGxpa2UgZ2Vja28pIHZlcnNpb24vMTMuMC4zIG1vYmlsZS8xNWUxNDggc2FmYXJpLzYwNC4xIiwiI3V0bSI6Int9IiwiI3RpbWVfY2FsaWJyYXRpb24iOjN9LCIjdXVpZCI6IjMyMWUwODZhLTMwYTktNDQ2NS04NjgzLWQ0NmM3MWJiZGEyZCJ9XSwiI2FwcF9pZCI6ImFmNjg2MWQwODVlMTRiNWM5NDg2NjJlMWZjZGNlNmVmIiwiI2ZsdXNoX3RpbWUiOjE2NzgwODc1ODQ2Njd9";
+                // 进过数数SDK处理过的 Test_JS_765 事件
+                var data = "eyJkYXRhIjpbeyIjdHlwZSI6InRyYWNrIiwiI3RpbWUiOiIyMDIzLTAzLTA2IDE0OjQ3OjUxLjE5MiIsIiNkaXN0aW5jdF9pZCI6IjE4NjkxZTcwOTgyODUxLTBlMGNjY2I2NWVlZTBlLTU0Mzc5NzEtMjUwMTI1LTE4NjkxZTcwOTgzNzkzIiwiI2FjY291bnRfaWQiOiJkZW5neWF6aG91XzEyMzUiLCIjZXZlbnRfbmFtZSI6IlRlc3RfSlNfNzY1IiwicHJvcGVydGllcyI6eyIjZGV2aWNlX2lkIjoiMTg2OTFlNzA5ODI4NTEtMGUwY2NjYjY1ZWVlMGUtNTQzNzk3MS0yNTAxMjUtMTg2OTFlNzA5ODM3OTMiLCIjem9uZV9vZmZzZXQiOjgsIiNvcyI6ImlPUyIsIiNsaWJfdmVyc2lvbiI6IjEuNi4xIiwiI2xpYiI6ImpzIiwiI3NjcmVlbl9oZWlnaHQiOjY2NywiI3NjcmVlbl93aWR0aCI6Mzc1LCIjYnJvd3NlciI6InNhZmFyaSIsIiNicm93c2VyX3ZlcnNpb24iOiIxMy4wLjMiLCIjc3lzdGVtX2xhbmd1YWdlIjoiemgiLCIjdWEiOiJtb3ppbGxhLzUuMCAoaXBob25lOyBjcHUgaXBob25lIG9zIDEzXzJfMyBsaWtlIG1hYyBvcyB4KSBhcHBsZXdlYmtpdC82MDUuMS4xNSAoa2h0bWwsIGxpa2UgZ2Vja28pIHZlcnNpb24vMTMuMC4zIG1vYmlsZS8xNWUxNDggc2FmYXJpLzYwNC4xIiwiI3V0bSI6Int9IiwiI3RpbWVfY2FsaWJyYXRpb24iOjN9fV0sIiNhcHBfaWQiOiJhZjY4NjFkMDg1ZTE0YjVjOTQ4NjYyZTFmY2RjZTZlZiIsIiNmbHVzaF90aW1lIjoxNjc4MDg1MjcxMTkzfQ";
+                var serverUrl = "https://receiver-ta-demo.thinkingdata.cn/sync_js";
+                var formData = new FormData();
+                formData.append('data',data);
+                
+                navigator.sendBeacon(serverUrl, formData);
+            }
+
+        }
     </script>
 </head>
 <body>
     <button onclick="addElementImg()">添加Element img</button>
+    <button onclick="ajaxRequestGet()">Ajax Get</button>
+    <button onclick="ajaxRequestPost()">Ajax Post</button>
+    <button onclick="navigatorRequest()">navigator</button>
     <ul id = "mylist">
         <li>最轻蜗牛</li>
         <li>三国志战略版</li>
