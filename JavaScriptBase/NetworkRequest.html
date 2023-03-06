@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function addElementImg() {
+            console.log("添加 addElementImg");
+
+            var src = "https://img2.baidu.com/it/u=3202947311,1179654885&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500";
+            // var src = "https://img2111.baidu.com/it";//错误的地址
+            var img = document.createElement('img');
+            img.width = 800 * 0.2;
+            img.height = 500 * 0.2;
+
+            // onload 请求完毕的回调
+            img.onload = function () {
+                console.log("==>>: onload");
+            };
+
+            // onerror 请求报错的回调
+            img.onerror = function () {
+                console.log("==>>: onerror");
+            }
+
+            img.onabort = function () {
+                console.log("==>>: onabort");
+            }
+        
+            document.getElementById("mylist").appendChild(img);//把img节点添加到ul中
+            // document.appendChild(img);// 不能直接添加在document上
+
+            img.src = src;
+
+        }
+    </script>
+</head>
+<body>
+    <button onclick="addElementImg()">添加Element img</button>
+    <ul id = "mylist">
+        <li>最轻蜗牛</li>
+        <li>三国志战略版</li>
+    </ul>
+</body>
+</html>

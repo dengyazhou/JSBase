@@ -291,29 +291,3 @@ console.log("JS TATest");
 // TA Log ==========================================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
-// img ==========================================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-var src = "https://img2.baidu.com/it/u=3202947311,1179654885&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500";
-var img = document.createElement('img');
-img.width = 100;
-img.height = 100;
-
-img.onload = function () {
-    console.log("==>>: onload");
-};
-
-img.onerror = function () {
-    console.log("==>>: onerror");
-}
-
-img.onabort = function () {
-    console.log("==>>: onabort");
-}
-
-// document.body.appendChild(img);
-
-img.src = src;
-
-
-// img ==========================================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
