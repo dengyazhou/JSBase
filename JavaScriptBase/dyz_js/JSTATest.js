@@ -291,3 +291,33 @@ console.log("JS TATest");
 // TA Log ==========================================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
+// TA test  ==========================================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// 字符串 中 是否包含 
+// 加i和不加i 好像没啥区别
+
+function os() {
+    var a = navigator.userAgent;
+    console.log(a);
+    if (/Windows/i.test(a)) {
+        if(/Phone/.test(a) || /WPDesktop/.test(a)) {
+            return 'Windows Phone';
+        }
+        return 'Windows';
+    } else if (/(iPhone|iPad|iPod)/.test(a)) {
+        return 'iOS';
+    } else if (/Android/.test(a)) {
+        return 'Android';
+    } else if (/(BlackBerry|PlayBook|BB10)/i.test(a)) {
+        return 'BlackBerry';
+    } else if (/Mac/i.test(a)) {
+        return 'Mac OS X';
+    } else if (/Linux/.test(a)) {
+        return 'Linux';
+    } else if (/CrOS/.test(a)) {
+        return 'Chrome OS';
+    } else {
+        return '';
+    }
+}
+
+console.log(os());
