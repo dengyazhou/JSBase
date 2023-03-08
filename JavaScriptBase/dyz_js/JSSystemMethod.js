@@ -90,12 +90,14 @@ console.log("JS 系统方法");
 
 // var utcD = new Date(utcTime + 3600000)
 
-
-
-
-
 // JS Date() ==========================================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+// JS getTimezoneOffset ==========================================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// var time = new Date();
+// var zoneOffset = 0 - time.getTimezoneOffset() / 60.0; // 返回时区
+// // console.log(time.getTimezoneOffset());
+// console.log(zoneOffset);
+// JS getTimezoneOffset ==========================================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
 // JS toJSON() ==========================================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
