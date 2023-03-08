@@ -428,7 +428,16 @@ console.log("JS 系统方法");
 // navigator.languages ==========================================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 // location.href ==========================================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-var href = location.href;
-console.log(href);
-
+// 链接地址，包含参数
+// 如下：file:///Users/thinkingdata-yazhou/Desktop/yazhou/JSBase/JavaScriptBase/JsBase.html?utm_source=sourceAAA&utm_medium=mediumBBB&utm_campaign=campaignCCC&utm_content=contentDDD&utm_term=EEE
+// var href = location.href;
+// console.log(href);
 // location.href ==========================================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+// location.pathname ==========================================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// 链接地址，不包含参数
+// 如下：/Users/thinkingdata-yazhou/Desktop/yazhou/JSBase/JavaScriptBase/JsBase.html
+// var pathname = location.pathname;
+// console.log(pathname);
+// location.pathname ==========================================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
