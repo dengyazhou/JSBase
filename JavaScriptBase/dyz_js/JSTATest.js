@@ -109,15 +109,20 @@ console.log("JS TATest");
 //     //     console.log(element);
 //     // });// 报错，因为arguments 不是数组
 
-//     // var arr1 = Array.prototype.slice.call(arrDyz,2);
+//     // var arr1 = Array.prototype.slice.call(arrDyz,1);
+//     // console.log(arr1);
 //     // arr1.forEach(element => {
 //     //     console.log(element);
+//     // });
+//     // arr1.forEach(function(item) {
+//     //     console.log(item);
 //     // });
 
 //     // console.log(Array.prototype.slice.call(arguments, 1));//转数组，从下标为1的参数开始，下标是从0开始算的
 
 //     eachDyz(Array.prototype.slice.call(arguments, 1), function (source) {
 //         console.log("===>>>>:开始2222");
+//         console.log(source);
 //         for (var prop in source) {
 //             console.log("prop: " + prop + " value: " + source[prop]);
 //             if (source[prop] !== void 0) {
@@ -295,29 +300,32 @@ console.log("JS TATest");
 // 字符串 中 是否包含 
 // 加i和不加i 好像没啥区别
 
-function os() {
-    var a = navigator.userAgent;
-    console.log(a);
-    if (/Windows/i.test(a)) {
-        if(/Phone/.test(a) || /WPDesktop/.test(a)) {
-            return 'Windows Phone';
-        }
-        return 'Windows';
-    } else if (/(iPhone|iPad|iPod)/.test(a)) {
-        return 'iOS';
-    } else if (/Android/.test(a)) {
-        return 'Android';
-    } else if (/(BlackBerry|PlayBook|BB10)/i.test(a)) {
-        return 'BlackBerry';
-    } else if (/Mac/i.test(a)) {
-        return 'Mac OS X';
-    } else if (/Linux/.test(a)) {
-        return 'Linux';
-    } else if (/CrOS/.test(a)) {
-        return 'Chrome OS';
-    } else {
-        return '';
-    }
-}
+// function os() {
+//     var a = navigator.userAgent;
+//     console.log(a);
+//     if (/Windows/i.test(a)) {
+//         if(/Phone/.test(a) || /WPDesktop/.test(a)) {
+//             return 'Windows Phone';
+//         }
+//         return 'Windows';
+//     } else if (/(iPhone|iPad|iPod)/.test(a)) {
+//         return 'iOS';
+//     } else if (/Android/.test(a)) {
+//         return 'Android';
+//     } else if (/(BlackBerry|PlayBook|BB10)/i.test(a)) {
+//         return 'BlackBerry';
+//     } else if (/Mac/i.test(a)) {
+//         return 'Mac OS X';
+//     } else if (/Linux/.test(a)) {
+//         return 'Linux';
+//     } else if (/CrOS/.test(a)) {
+//         return 'Chrome OS';
+//     } else {
+//         return '';
+//     }
+// }
 
-console.log(os());
+// console.log(os());
+
+// TA test  ==========================================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
