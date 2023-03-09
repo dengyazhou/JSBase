@@ -243,25 +243,28 @@ console.log("JS TATest");
 //     function Log(){
 //         _classCallCheck(this, Log);
 //     }
-//     _createClass(Log, null, [{
-//         key: "i",
-//         value: function i() {
-//             console.log("iiiiiiiiii");
-//             if (this.showLog == true) {
-//                 console.log("this.showLog == true");
-//             } else {
-//                 console.log("this.showLog !== true")
-//             }
-//         }
-//     },{
-//         key: "w",
-//         value: function w() {
-//             console.log("wwwwwwwww");
-//         }
-//     }]);
+//     // _createClass(Log, null, [{
+//     //     key: "i",
+//     //     value: function i() {
+//     //         console.log("iiiiiiiiii");
+//     //         if (this.showLog == true) {
+//     //             console.log("this.showLog == true");
+//     //         } else {
+//     //             console.log("this.showLog !== true")
+//     //         }
+//     //     }
+//     // },{
+//     //     key: "w",
+//     //     value: function w() {
+//     //         console.log("wwwwwwwww");
+//     //     }
+//     // }]);
     
 //     return Log;
 // }();
+
+// var aa = new Log(); // instance 是 Constructor 类型
+// var bb = Log(); // instance 不是 Constructor 类型
 
 // console.log(Log);
 // Log.showLog = true;
