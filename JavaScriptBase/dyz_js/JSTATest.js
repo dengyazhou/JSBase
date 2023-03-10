@@ -175,8 +175,20 @@ console.log("JS TATest");
 //         console.log("==== no: " + key);
 //     }
 // }
+
 // Object.prototype.hasOwnProperty ==========================================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+
+// 函数名调用 call ==========================================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// function testCall(key1, key2, key3) {
+//     console.log("key1: " + key1 + " key2: " + key2 + " key3: " + key3);
+// }
+
+// var ret1 = testCall.call("AA","BB","CC","DD"); // key1: BB key2: CC key3: DD
+// console.log(ret1);
+// var ret2 = testCall("AA","BB","CC","DD"); // key1: AA key2: BB key3: CC
+// console.log(ret2);
+// 函数名调用 call ==========================================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
 // || ==========================================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
