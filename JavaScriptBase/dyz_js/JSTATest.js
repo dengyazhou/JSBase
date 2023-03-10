@@ -159,8 +159,24 @@ console.log("JS TATest");
 // var objDyz = extendDyz({},DEFAULT, param);
 // console.log(objDyz);
 
-
 // forEach、slice.call ==========================================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// Object.prototype.hasOwnProperty ==========================================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// hasOwnProperty 是否有相应的属性
+// var obj = {
+//     name: "dengyazhou",
+//     age: 23,
+// };
+// for (var key in obj) {
+//     console.log(key);
+//     if (Object.prototype.hasOwnProperty.call(obj, key)) {
+//         console.log("==== yes: " + key);
+//     } else {
+//         console.log("==== no: " + key);
+//     }
+// }
+// Object.prototype.hasOwnProperty ==========================================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 
 
 // || ==========================================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
