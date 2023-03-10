@@ -46,6 +46,16 @@ console.log("JS 对象");
 // x.age = 10
 // console.log("person.age:"+person.age+" x.age:"+x.age);
 
+// 创建对象时 key 也可以带引号
+// var obj = {
+//     name: "dengyazhou",
+//     age: 12,
+//     "#ip": "123.123.123.123"
+// };
+
+// console.log(obj);
+// console.log(obj["#ip"]);
+
 // JS 对象 ==========================================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
